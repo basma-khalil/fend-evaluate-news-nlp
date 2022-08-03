@@ -1,0 +1,67 @@
+@import './global';
+
+.intro {
+	text-align: center;
+	color: $minor-color;
+
+	h2 {
+		margin: 40px 0;
+		font-family: 'Luckiest Guy', cursive;
+		font-size: 60px;
+		text-transform: uppercase;
+	}
+
+	.reactions {
+		display: flex;
+		justify-content: center;
+
+		svg {
+			width: 150px;
+			margin: 10px;
+			fill: #fff;
+			transition: fill 0.5s;
+
+			&.happy:hover {
+				fill: #ffc10e;
+			}
+
+			&.neutral:hover {
+				fill: #3498db;
+			}
+
+			&.sad:hover {
+				fill: #e74c3c;
+			}
+		}
+	}
+
+	p {
+		margin: 10px;
+		padding: 20px;
+		line-height: 1.6;
+	}
+}
+
+.form,
+.preview,
+.results {
+	h3 {
+		margin-bottom: 20px;
+		font-size: 22px;
+		font-weight: bold;
+	}
+}
+
+#preview {
+	max-height: 150px;
+	line-height: 1.5;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+#results {
+	text-transform: capitalize;
+}

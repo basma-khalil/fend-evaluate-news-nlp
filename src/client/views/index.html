@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="A web tool that allows you to run Natural Language Processing (NLP) on articles or blogs found on other websites.">
+        <title>Sentiment Analysis</title>
+		<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <h1><a href="index.html">Logo</a></h1>
+            </div>
+            <div class="navigation">
+                <div id="nav__btn" class="nav__btn" onclick="Client.showNav()" role="button">
+					<div></div>
+				</div>
+				<div id="navbar" class="navbar">
+          			<nav>
+            			<ul>
+							<li><a href="index.html">home</a></li>
+							<li><a href="#">about</a></li>
+							<li><a href="#">contact</a></li>
+						</ul>
+					</nav>
+				</div>
+            </div>
+        </header>
+
+        <main>
+			<section class="intro">
+				<h2>Sentiment Analysis</h2>
+				<div class="reactions"></div>
+				<p>A web tool that allows you to run Natural Language Processing (NLP) on articles or blogs found on other websites. This tool will give you back pertinent information about the article, like whether the content is subjective (opinion) or objective (fact-based) and whether it is positive, neutral, or negative in tone.</p>
+			</section>
+
+            <section class="form">
+				<h3>Please enter an article copy or an article link for analysis</h3>
+                <form class="">
+                    <input id="link" type="text" name="link" value="" placeholder="Article URL">
+                    <input type="submit" name="link-submit" value="submit" onclick="return Client.linkSubmit(event)" onsubmit="return Client.linkSubmit(event)">
+					<textarea id="text" cols="50" rows="5" name="text" placeholder="Article Copy"></textarea>
+                    <input type="submit" name="text-submit" value="submit" onclick="return Client.textSubmit(event)" onsubmit="return Client.textSubmit(event)">
+                </form>
+			</section>
+
+			<section class="preview">
+				<h3>Article Preview:</h3>
+				<div id="preview"></div>
+			</section>
+
+            <section class="results">
+                <h3>Analysis Results:</h3>
+                <div id="results"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy;2020 Basma Khalil - Made with <span class="heart">&#10084;</span></p>
+        </footer>
+
+		<script>
+			// Check that service workers are supported
+			if ('serviceWorker' in navigator) {
+				// Use the window load event to keep the page load performant
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('/service-worker.js');
+				});
+			}
+		</script>
+    </body>
+</html>
